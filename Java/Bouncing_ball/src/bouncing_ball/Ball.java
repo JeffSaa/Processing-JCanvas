@@ -1,27 +1,21 @@
-Ball ball;
+package bouncing_ball;
 
-void setup(){
-  fullScreen();
-  int r = int(random(200)), x = int(random(width-r)), y = int(random(height-r)), v = int(random(10, 40));
-  ball = new Ball(x, y, r, v);
-}
-
-void draw(){
-  background(51);
-  ball.move();
-  ellipse(ball.x, ball.y, ball.rad, ball.rad);
-}
-
-class Ball{
-  
-  int x, y, rad, vel;
+/**
+ *
+ * @author JeffSaa
+ */
+public class Ball {
+    
+  int x, y, rad, vel, width, height;
   boolean v_status = true, h_status = true;
   
-  Ball(int _x, int _y, int _rad, int _vel){
+  Ball(int _x, int _y, int _rad, int _vel, int _width, int _height){
     x = _x;
     y = _y;
     rad = _rad;
     vel = _vel;
+    width = _width;
+    height = _height;
   }
   
   void move(){
@@ -50,5 +44,5 @@ class Ball{
     else
       v_status = !v_status;
   }
-  
+    
 }
